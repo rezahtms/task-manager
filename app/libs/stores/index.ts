@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 
+const dummyReducer = (state = {}) => state;
+
 export const store = configureStore({
   reducer: {
 
+    dummy: dummyReducer,
   },
   devTools: process.env.NODE_ENV !== "production",
 });
