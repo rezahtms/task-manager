@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   description:
     "وایب یک ابزار مدیریت وظایف شبیه Jira برای برنامه‌ریزی، پیگیری و همکاری تیم‌هاست.",
   applicationName: "vibe",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "fa_IR",
@@ -28,9 +34,6 @@ export const metadata: Metadata = {
     title: "وایب | مدیریت وظایف تیمی",
     description:
       "مدیریت پروژه، بردها، اسپرینت‌ها و تسک‌ها در یک پلتفرم حرفه‌ای.",
-  },
-  twitter: {
-    card: "summary_large_image",
   },
 };
 
