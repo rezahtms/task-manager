@@ -20,7 +20,7 @@ export default function Column({
       id={id}
       role="region"
       aria-labelledby={titleId}
-      className="shrink-0 grow min-w-70"
+      className="shrink-0 grow min-w-70 "
       onDragOver={onDragOver}
       onDrop={onDrop}
     >
