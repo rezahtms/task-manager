@@ -7,7 +7,7 @@ export default function TaskCreator() {
     <CustomModal
       trigger={
         <ModalButton
-          className=" focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 text-slate-700 bg-slate-100 hover:bg-slate-200"
+          className=" focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 text-slate-700 bg-slate-100 hover:bg-slate-200 cursor-pointer"
           aria-label="افزودن وظیفه"
         >
           افزودن وظیفه

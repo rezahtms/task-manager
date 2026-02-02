@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 import { vazir } from "./fonts";
 import "./globals.css";
 import ReduxProvider from "./libs/stores/provider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -47,6 +37,17 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body className={`${vazir.variable}  antialiased`}>
         <ReduxProvider>{children}</ReduxProvider>
+        <ToastContainer
+          position="bottom-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </body>
     </html>
   );

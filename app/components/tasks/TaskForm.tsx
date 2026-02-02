@@ -1,16 +1,22 @@
 "use client";
 
 import { MEMBERS, STATUS } from "@/app/libs/constants/tasks";
+import { addTask } from "@/app/libs/stores/tasksSlice";
 import { taskFormSchemaStrict } from "@/app/libs/validators/task-form.validation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Plus } from "lucide-react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { v4 as uuidv4 } from "uuid";
+
 import { FormInputField } from "../ui/FormInputField";
 import { FormSelectableField } from "../ui/FormSelectableField";
 import { FormTextareaField } from "../ui/FormTextareaField";
 
 export default function TaskForm() {
-  const { control, handleSubmit, formState } = useForm({
+  const dispatch = useDispatch();
+  const { control, handleSubmit, formState, reset } = useForm({
     resolver: zodResolver(taskFormSchemaStrict),
     defaultValues: {
       title: "",
@@ -26,7 +32,25 @@ export default function TaskForm() {
     ? T
     : never;
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(data);
+    try {
+      const newTask = {
+        id: uuidv4(),
+        title: data.title,
+        description: data.description || "",
+        assignee: data.assign,
+        status: data.status || "todo",
+      };
+
+      dispatch(addTask(newTask));
+      toast.success(`وظیفه "${newTask.title}" با موفقیت اضافه شد!`);
+      reset();
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.error("خطا در افزودن وظیفه، لطفاً دوباره تلاش کنید.");
+      } else {
+        toast.error("خطا در افزودن وظیفه، لطفاً دوباره تلاش کنید.");
+      }
+    }
   };
   return (
     <form
