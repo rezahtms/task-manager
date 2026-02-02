@@ -84,3 +84,18 @@ export const TASKS: Task[] = [
     status: "done",
   },
 ];
+
+
+export const MEMBERS = [
+  { id: 1, name: "علی" },
+  { id: 2, name: "سارا" },
+  { id: 3, name: "رضا" },
+  { id: 4, name: "محمد" },
+  { id: 5, name: "باران" },
+  { id: 6, name: "دانیال" },
+  { id: 7, name: "شیرین" },
+  { id: 8, name: "کیان" }
+];
+
+
+export const STATUS = [{ status: "todo", value: 'در انتظار انجام' }, { status: "in-development", value: 'در حال توسعه' }, { status: "validation", value: 'در حال بررسی' }, { status: "done", value: 'انجام شده' }]

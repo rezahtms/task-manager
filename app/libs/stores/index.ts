@@ -1,11 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-const dummyReducer = (state = {}) => state;
+import tasksReducer from "./tasksSlice";
 
 export const store = configureStore({
   reducer: {
-
-    dummy: dummyReducer,
+    tasks: tasksReducer,
   },
   devTools: process.env.NODE_ENV !== "production",
 });

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { vazir } from "./fonts";
 import "./globals.css";
 import ReduxProvider from "./libs/stores/provider";
 
@@ -23,8 +24,8 @@ export const metadata: Metadata = {
   applicationName: "vibe",
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/images/favicon.svg", type: "image/svg+xml" },
+      { url: "/images/favicon.ico", type: "image/x-icon" },
     ],
   },
   openGraph: {
@@ -44,9 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${vazir.variable}  antialiased`}>
         <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>

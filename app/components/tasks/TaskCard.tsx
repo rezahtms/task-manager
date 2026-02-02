@@ -7,7 +7,7 @@ export default function TaskCard({ task }: { task: Task }) {
     <li role="listitem">
       <article
         aria-labelledby={task.id}
-        className="bg-white rounded-lg card-shadow text-black border border-slate-100 p-4 peer-checked:p-2 peer-checked:text-xs"
+        className="bg-white rounded-lg card-shadow text-black border border-slate-100 p-4 peer-checked:p-2 peer-checked:text-xs cursor-move"
       >
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">

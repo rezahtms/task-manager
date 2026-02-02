@@ -24,3 +24,10 @@ export interface ColumnConfig {
   | { type: "select"; options: string[]; focusColor: string };
   status: TaskStatus;
 }
+export type DraggingContext = {
+  isDragging: boolean;
+  activeTaskId: string | null;
+  sourceColumnId: string | null;
+};
+
+
