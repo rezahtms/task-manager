@@ -60,7 +60,7 @@ export default function TaskCard({ task }: { task: Task }) {
             <button
               onClick={handleDeleteClick}
               className="text-gray-400 hover:text-red-500 transition-colors "
-              aria-label={`Delete task ${task.title}`}
+              aria-label={`حذف وظیفه ${task.title}`}
             >
               <Trash size={14} />
             </button>

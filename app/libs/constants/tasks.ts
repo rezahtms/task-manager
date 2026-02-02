@@ -1,6 +1,17 @@
 import { Check, CheckCheck, CircleDashed, ScanSearch } from "lucide-react";
 import { ColumnConfig, Task } from "../types/task";
 
+export const MEMBERS = [
+  { id: 1, name: "علی" },
+  { id: 2, name: "سارا" },
+  { id: 3, name: "رضا" },
+  { id: 4, name: "محمد" },
+  { id: 5, name: "باران" },
+  { id: 6, name: "دانیال" },
+  { id: 7, name: "شیرین" },
+  { id: 8, name: "کیان" },
+];
+
 export const COLUMNS: ColumnConfig[] = [
   {
     id: "todo",
@@ -10,7 +21,7 @@ export const COLUMNS: ColumnConfig[] = [
     status: "todo",
     filter: {
       type: "input",
-      placeholder: "جستجو در وظایف...",
+      placeholder: "جستجو براساس عنوان...",
       focusColor: "sky-300",
     },
   },
@@ -21,9 +32,10 @@ export const COLUMNS: ColumnConfig[] = [
     icon: CircleDashed,
     status: "in-development",
     filter: {
-      type: "input",
-      placeholder: "جستجو براساس توسعه دهنده...",
+      type: "select",
+      placeholder: "انتخاب توسعه دهنده...",
       focusColor: "amber-300",
+      options: MEMBERS.map((member) => member.name),
     },
   },
   {
@@ -34,7 +46,7 @@ export const COLUMNS: ColumnConfig[] = [
     status: "validation",
     filter: {
       type: "input",
-      placeholder: "فیلتر بر اساس بازبینی‌کننده...",
+      placeholder: "فیلتر بر اساس  عنوان...",
       focusColor: "violet-300",
     },
   },
@@ -45,14 +57,12 @@ export const COLUMNS: ColumnConfig[] = [
     icon: CheckCheck,
     status: "done",
     filter: {
-      type: "select",
-      options: ["همه", "نسخه ۱.۰", "پایداری"],
+      type: "input",
+      placeholder: "فیلتر براساس توضیحات",
       focusColor: "green-300",
     },
   },
 ];
-
-
 
 export const TASKS: Task[] = [
   {
@@ -85,17 +95,9 @@ export const TASKS: Task[] = [
   },
 ];
 
-
-export const MEMBERS = [
-  { id: 1, name: "علی" },
-  { id: 2, name: "سارا" },
-  { id: 3, name: "رضا" },
-  { id: 4, name: "محمد" },
-  { id: 5, name: "باران" },
-  { id: 6, name: "دانیال" },
-  { id: 7, name: "شیرین" },
-  { id: 8, name: "کیان" }
+export const STATUS = [
+  { status: "todo", value: "در انتظار انجام" },
+  { status: "in-development", value: "در حال توسعه" },
+  { status: "validation", value: "در حال بررسی" },
+  { status: "done", value: "انجام شده" },
 ];
-
-
-export const STATUS = [{ status: "todo", value: 'در انتظار انجام' }, { status: "in-development", value: 'در حال توسعه' }, { status: "validation", value: 'در حال بررسی' }, { status: "done", value: 'انجام شده' }]
